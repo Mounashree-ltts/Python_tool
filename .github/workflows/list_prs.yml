@@ -1,12 +1,7 @@
 name: List Pull Requests
 
 on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - reopened
-      - synchronize
+   workflow_dispatch:
 
 jobs:
   list-prs:
@@ -53,5 +48,4 @@ jobs:
 
           python main.py \
             --repo ${{ github.repository }} \
-            --pr ${{ github.event.pull_request.number }} \
             --list-prs
